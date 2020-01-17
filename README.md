@@ -60,9 +60,18 @@ From [Getting Started](https://nextjs.org/learn/basics/getting-started):
 
         > ! NodeJS runtime must be present and has to scale depending on traffic.
 
+## Styling
+
+#### Sass, Less, and Stylus Support
+- [@zeit/next-sass](https://github.com/zeit/next-plugins/blob/master/packages/next-sass)
+- [@zeit/next-less](https://github.com/zeit/next-plugins/tree/master/packages/next-less)
+- [@zeit/next-stylus](https://github.com/zeit/next-plugins/blob/master/packages/next-stylus)
+
+
 ### Resources
 
 - [Repo](https://github.com/zeit/next.js)
 - [Docs](https://nextjs.org/docs)
 - [Learn - Basics - Getting Started](https://nextjs.org/learn/basics/getting-started)
 - [Static Optimization Indicator](https://nextjs.org/docs/api-reference/next.config.js/static-optimization-indicator)
+- [Plugins](https://github.com/zeit/next-plugins)
