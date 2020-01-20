@@ -14,13 +14,6 @@ const SSRPage = ({ data }) => (
     </p>
     <a href="/">Home</a>
     <style jsx>{`
-      .data {
-        background-color: #dedede;
-        color: #343434;
-        font-size: 0.8rem;
-        overflow-wrap: break-word;
-        padding: 1rem;
-      }
       .morado {
         color: violet;
       }
