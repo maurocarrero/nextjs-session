@@ -5,3 +5,11 @@ body {
   max-width: 40rem;
   margin: 0 auto;
 }
+
+.data {
+  background-color: #dedede;
+  color: #343434;
+  font-size: 0.8rem;
+  overflow-wrap: break-word;
+  padding: 1rem;
+}
