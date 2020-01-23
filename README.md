@@ -73,7 +73,13 @@ From [Getting Started](https://nextjs.org/learn/basics/getting-started):
 - [Docs - Data fetching](https://nextjs.org/docs/basic-features/data-fetching)
 - [SWR - Data fetching library](https://github.com/zeit/swr)
 
-## API Routes
+## Routing
+- File-system based router built on the concept of pages.
+- Index `pages/blog/index.js` → `/blog`) files will be mapped to the root of the folder.
+- Nested files/paths supported.
+- Dynamic routes segments: brackets syntax [].
+
+### API Routes
 
 - Files inside `pages/api` --> `/api/*` will be treated as **endpoints** instead of pages.
 - A **request handler** function must be exported.
@@ -81,6 +87,11 @@ From [Getting Started](https://nextjs.org/learn/basics/getting-started):
     - res: [ServerResponse](https://nodejs.org/api/http.html#http_class_http_serverresponse)
 - Do not specify CORS headers (Same Origin only), can be solved by using [Micro](https://nextjs.org/docs/api-routes/api-middlewares#micro-support)
 - Server Side only
+- Client-Side route transitions with `next/link` component, as in SPAs. HRef and as can be provided for dynamic routes.
+- Injecting the [router object](https://nextjs.org/docs/api-reference/next/router#router-object): [useRouter hook](https://nextjs.org/docs/api-reference/next/router#userouter)(recommended) and [withRouter HoC](https://nextjs.org/docs/api-reference/next/router#withrouter).
+
+#### Dynamic API routes
+
 
 ## Static File Serving
 
