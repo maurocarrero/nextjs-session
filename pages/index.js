@@ -1,10 +1,16 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { Button } from '../src/components/button';
+
 import css from 'styled-jsx/css';
 
 const imageJsx = css`
   .image {
     width: 100%;
+  }
+  .error {
+    color: red;
+    background-color: white;
   }
 `;
 
@@ -27,22 +33,22 @@ const HomePage = () => {
 
   return (
     <section>
-      <h1>Pre-render: Static Generation</h1>
-      <p>This page is automatically optimized at build time.</p>
+      <h1>Styling</h1>
       <div style={dataStyle}>{data}</div>
       <figure>
         <img className="image" src="/rick-and-morty-wheres-waldo.jpg" />
         <figcaption>Rick and Morty</figcaption>
+        <Button />
       </figure>
-      <ol>
-        <li>
-          <a href="/ssr">SSR Page</a>
-        </li>
-        <li>
-          <a href="/swr">Using SWR</a>
-        </li>
-      </ol>
+      <a href="https://nextjs.org/docs/basic-features/built-in-css-support">
+        https://nextjs.org/docs/basic-features/built-in-css-support
+      </a>
       <style jsx>{imageJsx}</style>
+      <style jsx>{`
+        figcaption {
+          text-align: center;
+        }
+      `}</style>
     </section>
   );
 };
