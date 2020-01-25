@@ -1,0 +1,14 @@
+body {
+  font-family: 'SF Pro Text', 'SF Pro Icons', system-ui;
+  padding: 2rem 10rem;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+ul, h4 {
+  margin: .2rem;
+}

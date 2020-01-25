@@ -1,13 +1,13 @@
-const InfoPage = ({ todo }) => (
+const InfoPage = ({ prop }) => (
   <section>
-    <h1>Routing</h1>
-    <h2>Info page: {todo}</h2>
+    <h2>Info page: {prop}</h2>
   </section>
 );
 
-InfoPage.getInitialProps = async () => {
+InfoPage.getInitialProps = async ctx => {
+  console.log('Running Info page getInitialProps :: req', typeof ctx.req);
   return {
-    todo: 'render in server'
+    prop: 'initial prop'
   };
 };
 
