@@ -137,6 +137,13 @@ From [Getting Started](https://nextjs.org/learn/basics/getting-started):
 ### TypeScript
 - [Ignoring TypeScript Errors](https://nextjs.org/docs/api-reference/next.config.js/ignoring-typescript-errors)
 
+### Other advanced features
+
+#### Custom Server
+- Disables some performance optimizations: `serverless functions` and `automatic static optimization`.
+
+#### Static HTML Export
+
 ### Resources
 
 - [Repo](https://github.com/zeit/next.js)
