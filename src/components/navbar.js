@@ -37,7 +37,10 @@ const NavBar = () => (
       </li>
       <li>
         <Link href="/info/[slug]" as="/info/different">
-          <a>Dynamic route using slug file as /info/different using next/link "as"</a>
+          <a>
+            Dynamic route using slug file as /info/different using next/link
+            "as"
+          </a>
         </Link>
       </li>
       <li>
@@ -55,6 +58,14 @@ const NavBar = () => (
         <ActiveLinkWithRouter href="/routers/withrouter">
           withRouter
         </ActiveLinkWithRouter>
+      </li>
+    </ul>
+    <h4>Imperative routing</h4>
+    <ul>
+      <li>
+        <Link href="/routers/imperative">
+          <a>Using `next/router`</a>
+        </Link>
       </li>
     </ul>
   </aside>

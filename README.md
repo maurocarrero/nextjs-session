@@ -77,10 +77,9 @@ From [Getting Started](https://nextjs.org/learn/basics/getting-started):
 - File-system based router built on the concept of pages.
 - Index `pages/blog/index.js` → `/blog`) files will be mapped to the root of the folder.
 - Nested files/paths supported.
-- Dynamic routes segments: brackets syntax [].
+- [Dynamic Routes](https://nextjs.org/docs/routing/dynamic-routes) segments: brackets syntax []. Since predefined paths are not always enough for complex applications, dynamic paths let us design routes with wildcard segments (a.k.a. slugs, pretty urls, etc.)
 
 ### API Routes
-
 - Files inside `pages/api` --> `/api/*` will be treated as **endpoints** instead of pages.
 - A **request handler** function must be exported.
     - req: [IncomingMessage](https://nodejs.org/api/http.html#http_class_http_incomingmessage) + [middlewares](https://nextjs.org/docs/api-routes/api-middlewares)
@@ -92,6 +91,12 @@ From [Getting Started](https://nextjs.org/learn/basics/getting-started):
 
 #### Dynamic API routes
 
+#### Imperatively
+- Instead of using `next/link`, `next/router` can be imported and used for an imperative approach to routing.
+- [Router API reference](https://nextjs.org/docs/api-reference/next/router#router-api)
+
+#### Shallow Routing
+- [Shallow routing](https://nextjs.org/docs/routing/shallow-routing): refresh URL without leaving the page or losing state.
 
 ## Static File Serving
 
@@ -103,17 +108,29 @@ From [Getting Started](https://nextjs.org/learn/basics/getting-started):
 ## Styling
 
 #### Global Stylesheet
-- Import CSS file from `pages/_app.js` partial component.
+- Import CSS file from `pages/_app.js` partial component (can only be imported here).
 - This style will be applied to all pages and components.
-- To avoid conflicts, due to its global nature, this stylesheets can only be imported here.
 - Hot reload available.
 - For `production` all stylesheets are concatenated and minified in one file.
 
 #### Component-level CSS
+- [CSS Modules](https://github.com/css-modules/css-modules) supported.
+- Can be imported from anywhere.
+- `[name].module.css` file naming convention. Only enabled for files with the `.module.css` extension.
+- all CSS modules will be concatenated and splitted in many CSS files.
 
-#### Sass, Less, and Stylus Support
+#### CSS-in-JS
+- Inline styles are available.
+- [styled-jsx](https://github.com/zeit/styled-jsx) is bundled by default bringing support for isolated scoped CSS.
+- 
 
+#### Sass
+- [sass support](https://nextjs.org/docs/basic-features/built-in-css-support#sass-support)
+- `sass` needs to be installed.
+- same support for `.module.scss` and `.module.sass`.
 - [@zeit/next-sass](https://github.com/zeit/next-plugins/blob/master/packages/next-sass)
+
+#### Less, and Stylus Support
 - [@zeit/next-less](https://github.com/zeit/next-plugins/tree/master/packages/next-less)
 - [@zeit/next-stylus](https://github.com/zeit/next-plugins/blob/master/packages/next-stylus)
 
