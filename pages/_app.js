@@ -1,16 +1,14 @@
 import { Header } from '../src/components/header';
-import { NavBar } from '../src/components/navbar';
 
 import '../src/styles.css';
 
-function MyApp({ Component, pageProps }) {
+function APIRoutesApp({ Component, pageProps }) {
   return (
     <section>
-      <Header />
+      <Header title={'API routes'}/>
       <Component {...pageProps} />
-      <NavBar />
     </section>
   );
 }
 
-export default MyApp;
+export default APIRoutesApp;

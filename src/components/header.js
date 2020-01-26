@@ -1,6 +1,6 @@
-const Header = () => (
+const Header = ({ title }) => (
   <header>
-    <h1>Routing</h1>
+    <h1>{title}</h1>
   </header>
 );
 

@@ -9,6 +9,8 @@ h1 {
   font-size: 3rem;
 }
 
-ul, h4 {
-  margin: .2rem;
+.data {
+  background-color: #dedede;
+  font-size: 1rem;
+  padding: .4rem;
 }
