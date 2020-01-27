@@ -5,12 +5,14 @@ Released on October 2016.
 Main feature: SSR
 Requirement: Node > 10
 
+- Inspired by [Principles of Rich Web Applications](https://rauchg.com/2014/7-principles-of-rich-web-applications)
+
 ### What is it?
-From [Getting Started](https://nextjs.org/learn/basics/getting-started):
+[Getting Started](https://nextjs.org/docs/getting-started):
 
 * An intuitive *page-based routing system* (with support for dynamic routes)
 * Automatically *statically optimizes* page(s) when possible
-* *Server-side renders* page(s) with blocking data requirements
+* Renders page(s) in the *server side* when they have blocking data requirements
 * Automatic *code splitting* for faster page loads
 * *Client-side routing* with optimized page prefetching
 * *Webpack-based dev environment* which supports *Hot Module Replacement* (HMR)
@@ -73,14 +75,31 @@ From [Getting Started](https://nextjs.org/learn/basics/getting-started):
 - [Docs - Data fetching](https://nextjs.org/docs/basic-features/data-fetching)
 - [SWR - Data fetching library](https://github.com/zeit/swr)
 
-## API Routes
+## Routing
+- File-system based router built on the concept of pages.
+- Index `pages/blog/index.js` → `/blog`) files will be mapped to the root of the folder.
+- Nested files/paths supported.
+- [Dynamic Routes](https://nextjs.org/docs/routing/dynamic-routes) segments: brackets syntax []. Since predefined paths are not always enough for complex applications, dynamic paths let us design routes with wildcard segments (a.k.a. slugs, pretty urls, etc.)
 
+### API Routes
 - Files inside `pages/api` --> `/api/*` will be treated as **endpoints** instead of pages.
-- A **request handler** function must be exported.
+- A **request handler** function must be exported. `export default (req, res) => {}`
     - req: [IncomingMessage](https://nodejs.org/api/http.html#http_class_http_incomingmessage) + [middlewares](https://nextjs.org/docs/api-routes/api-middlewares)
     - res: [ServerResponse](https://nodejs.org/api/http.html#http_class_http_serverresponse)
 - Do not specify CORS headers (Same Origin only), can be solved by using [Micro](https://nextjs.org/docs/api-routes/api-middlewares#micro-support)
 - Server Side only
+- Client-Side route transitions with `next/link` component, as in SPAs. `href` and `as` can be provided for dynamic routes.
+- Injecting the [router object](https://nextjs.org/docs/api-reference/next/router#router-object): [useRouter hook](https://nextjs.org/docs/api-reference/next/router#userouter)(recommended) and [withRouter HoC](https://nextjs.org/docs/api-reference/next/router#withrouter).
+- Dynamic API routes are also available as in dynamic pages.
+- **Middlewares**: `req.cookies`, `req.query` and `req.body` parse the incoming request `req`.
+
+
+#### Imperatively
+- Instead of using `next/link`, `next/router` can be imported and used for an imperative approach to routing.
+- [Router API reference](https://nextjs.org/docs/api-reference/next/router#router-api)
+
+#### Shallow Routing
+- [Shallow routing](https://nextjs.org/docs/routing/shallow-routing): refresh URL without leaving the page or losing state.
 
 ## Static File Serving
 
@@ -92,22 +111,40 @@ From [Getting Started](https://nextjs.org/learn/basics/getting-started):
 ## Styling
 
 #### Global Stylesheet
-- Import CSS file from `pages/_app.js` partial component.
+- Import CSS file from `pages/_app.js` partial component (can only be imported here).
 - This style will be applied to all pages and components.
-- To avoid conflicts, due to its global nature, this stylesheets can only be imported here.
 - Hot reload available.
 - For `production` all stylesheets are concatenated and minified in one file.
 
 #### Component-level CSS
+- [CSS Modules](https://github.com/css-modules/css-modules) supported.
+- Can be imported from anywhere.
+- `[name].module.css` file naming convention. Only enabled for files with the `.module.css` extension.
+- all CSS modules will be concatenated and splitted in many CSS files.
 
-#### Sass, Less, and Stylus Support
+#### CSS-in-JS
+- Inline styles are available.
+- [styled-jsx](https://github.com/zeit/styled-jsx) is bundled by default bringing support for isolated scoped CSS.
 
+#### Sass
+- [sass support](https://nextjs.org/docs/basic-features/built-in-css-support#sass-support)
+- `sass` needs to be installed.
+- same support for `.module.scss` and `.module.sass`.
 - [@zeit/next-sass](https://github.com/zeit/next-plugins/blob/master/packages/next-sass)
+
+#### Less, and Stylus Support
 - [@zeit/next-less](https://github.com/zeit/next-plugins/tree/master/packages/next-less)
 - [@zeit/next-stylus](https://github.com/zeit/next-plugins/blob/master/packages/next-stylus)
 
 ### TypeScript
 - [Ignoring TypeScript Errors](https://nextjs.org/docs/api-reference/next.config.js/ignoring-typescript-errors)
+
+### Other advanced features
+
+#### Custom Server
+- Disables some performance optimizations: `serverless functions` and `automatic static optimization`.
+
+#### Static HTML Export
 
 ### Resources
 
