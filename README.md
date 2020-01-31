@@ -5,12 +5,14 @@ Released on October 2016.
 Main feature: SSR
 Requirement: Node > 10
 
+- Inspired by [Principles of Rich Web Applications](https://rauchg.com/2014/7-principles-of-rich-web-applications)
+
 ### What is it?
-From [Getting Started](https://nextjs.org/learn/basics/getting-started):
+[Getting Started](https://nextjs.org/docs/getting-started):
 
 * An intuitive *page-based routing system* (with support for dynamic routes)
 * Automatically *statically optimizes* page(s) when possible
-* *Server-side renders* page(s) with blocking data requirements
+* Renders page(s) in the *server side* when they have blocking data requirements
 * Automatic *code splitting* for faster page loads
 * *Client-side routing* with optimized page prefetching
 * *Webpack-based dev environment* which supports *Hot Module Replacement* (HMR)
@@ -91,7 +93,6 @@ From [Getting Started](https://nextjs.org/learn/basics/getting-started):
 - Dynamic API routes are also available as in dynamic pages.
 - **Middlewares**: `req.cookies`, `req.query` and `req.body` parse the incoming request `req`.
 
-
 #### Imperatively
 - Instead of using `next/link`, `next/router` can be imported and used for an imperative approach to routing.
 - [Router API reference](https://nextjs.org/docs/api-reference/next/router#router-api)
@@ -141,6 +142,19 @@ From [Getting Started](https://nextjs.org/learn/basics/getting-started):
 
 #### Custom Server
 - Disables some performance optimizations: `serverless functions` and `automatic static optimization`.
+- Some unwanted behavior can emerge from this approach, check [this recommendation](https://nextjs.org/docs/advanced-features/custom-server#disabling-file-system-routing) to prevent them.
+- Uses Next as the context of the server to take advantage of its server features.
+
+```js
+const next = require('next')
+const app = next({})
+```
+
+- Add `server.js` to the project and replace `dev` script in package.json:
+
+```js
+  "dev": "node server.js"
+```
 
 #### Static HTML Export
 
