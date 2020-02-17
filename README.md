@@ -5,6 +5,8 @@ Released on October 2016.
 Main feature: SSR
 Requirement: Node > 10
 
+- Inspired by [Principles of Rich Web Applications](https://rauchg.com/2014/7-principles-of-rich-web-applications)
+
 ### What is it?
 [Getting Started](https://nextjs.org/docs/getting-started):
 
