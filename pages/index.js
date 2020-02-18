@@ -38,7 +38,10 @@ const HomePage = () => {
       <figure>
         <img className="image" src="/rick-and-morty-wheres-waldo.jpg" />
         <figcaption>Rick and Morty</figcaption>
-        <Button />
+        <Button className="error"/>
+        <button type="button" className="error">
+          yortseD
+        </button>
       </figure>
       <a href="https://nextjs.org/docs/basic-features/built-in-css-support">
         https://nextjs.org/docs/basic-features/built-in-css-support
