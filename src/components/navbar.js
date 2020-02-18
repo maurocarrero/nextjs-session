@@ -49,7 +49,7 @@ const NavBar = () => (
         </Link>
       </li>
     </ul>
-    <h4>Using userRouter hook and/or withRouter HoC</h4>
+    <h4>Using useRouter hook and/or withRouter HoC</h4>
     <ul>
       <li>
         <ActiveLink href="/routers/userouter">useRouter</ActiveLink>
